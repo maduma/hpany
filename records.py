@@ -29,4 +29,5 @@ with open(tokenFile) as f:
     token = f.read()
     records = getRecord(hpsaServer, token, tenantId, entityType) 
     print(json.dumps(records, indent=4, sort_keys=True))
-    print('Found {0} records'.format(len(records['entities'])))
+    if records:
+        print('Found {0} records'.format(len(records['entities'])))
