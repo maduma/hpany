@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import sys, requests, json
+import sys, requests
 
 """
 Signin to HP Service Anywhere

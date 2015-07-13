@@ -1,4 +1,4 @@
-import requests, urllib2, json
+import requests, json
 
 """
 Get single record
@@ -15,9 +15,9 @@ def getRecord(server, token, tenantId, entityType, entityId):
     url = 'https://{0}/{1}'.format(server, rest)
     params = {'layout': 'Name'}
     cookies = {'LWSSO_COOKIE_KEY': token, 'TENANTID': str(tenantId)}
-    req = requests.get(url, params=params, cookies=cookies)
-    if req.status_code == requests.codes.ok:
-        return json.loads(req.text)
+    r = requests.get(url, params=params, cookies=cookies)
+    if r.status_code == requests.codes.ok:
+        return json.loads(r.text)
     return None
 
 with open(tokenFile) as f:
