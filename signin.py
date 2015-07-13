@@ -31,7 +31,6 @@ tokenFile = 'token.txt'
 
 token = signin(login, password, hpsaServer)
 if token:
-    f = open(tokenFile, 'w')
-    f.write(token)
-    f.close()
-    print('{0} updated'.format(tokenFile))
+    with open(tokenFile, 'w') as f:
+        f.write(token)
+        print('{0} updated'.format(tokenFile))

@@ -1,6 +1,5 @@
 import sys, requests, json
 
-
 tokenFile = 'token.txt'
 hpsaServer = 'mslon001pngx.saas.hp.com'
 tenantId = 725867830
