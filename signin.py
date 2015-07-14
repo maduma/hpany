@@ -10,7 +10,8 @@ Token is the value of cookie key LWSSO_COOKIE_KEY
 def signin(login, password, server):
     loginAPI = 'auth/authentication-endpoint/authenticate/login'
     url = 'https://{0}/{1}'.format(server, loginAPI)
-    data = '{{"Login": "{0}", "Password": "{1}"}}'.format(login, password)
+    credential = '{{"Login": "{0}", "Password": "{1}"}}'
+    data = credential.format(login, password)
     r = requests.post(url, data=data)
     if r.status_code == requests.codes.ok:
         return r.text
