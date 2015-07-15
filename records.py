@@ -16,7 +16,7 @@ def getRecord(server, token, tenantId, entityType, layout):
     cookies = {'LWSSO_COOKIE_KEY': token, 'TENANTID': str(tenantId)}
     r = requests.get(url, params=params, cookies=cookies)
     if r.status_code == requests.codes.ok:
-        return json.loads(r.text)
+        return r.json()
     return None
 
 """

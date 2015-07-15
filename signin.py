@@ -35,3 +35,5 @@ if token:
     with open(tokenFile, 'w') as f:
         f.write(token)
         print('{0} updated'.format(tokenFile))
+else:
+    print('authenticaton failed')
